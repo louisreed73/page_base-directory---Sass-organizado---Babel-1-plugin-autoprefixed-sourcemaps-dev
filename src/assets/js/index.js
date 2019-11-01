@@ -13,6 +13,10 @@ import '../scss/commonSCSS/estilo.scss';
 import '../imgs/coches/img2.png';
 import '../imgs/img1.png';
 
+
+//Polyfill custom Event
+
+/* 
 (function () {
     if (typeof window.CustomEvent === "function") return false; //If not IE
 
@@ -27,45 +31,9 @@ import '../imgs/img1.png';
 
     window.CustomEvent = CustomEvent;
 })();
+ */
 
-
-let { log, dir, table, timeEnd, time } = console;
-
-log("Pagina INDEX!!!!!");
-
-
-
-
-const qs=(elem)=>{
-    return document.querySelector.call(document,elem);
-};
-
-const qsA=(elem)=>{
-    return document.querySelectorAll.call(document,elem);
-};
-
-const elems=[
-    qs(".parent"),
-    qsA(".parent > div")
-];
-
-let [
-    padre,
-    hijos
-]=elems;
-
-console.log(padre,hijos);
-
-const cargaList=(nodList)=> {
-    [...nodList].forEach(element => {
-        element.addEventListener("veronica",function (e){
-            console.log(this)
-        })
-    });
-};
-
-cargaList(hijos);
-
+/* 
 padre.addEventListener("click",function (e){
     log(this);
 
@@ -74,19 +42,13 @@ padre.addEventListener("click",function (e){
             bubbles:true
         }))
     });
+}) */
+
+let { log, dir, table, timeEnd, time } = console;
+
+log("Hola!!!!")
 
 
-})
 
-
-let verita={
-    nombre:"MotherFucker",
-    edad:44
-};
-
-let copiaSa=Object.assign({},verita);
-
-log(`quiero copiar a algo: ${copiaSa}`)
-log(copiaSa)
 
 

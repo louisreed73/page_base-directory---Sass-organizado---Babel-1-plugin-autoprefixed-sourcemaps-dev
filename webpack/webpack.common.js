@@ -6,9 +6,7 @@ const MiniCssExtractPlugin=require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
-        bundle: './src/assets/js/index.js',
-        contact: './src/assets/js/contact.js',
-        sobremi: './src/assets/js/sobremi.js'
+        bundle: './src/assets/js/index.js'
     },
     output: {
         filename: "assets/js/[name].js",
@@ -61,8 +59,6 @@ module.exports = {
                         presets: [
                             [
                                 "@babel/preset-env", {
-
-
                                     useBuiltIns: "usage"
                                 }
                             ]
@@ -83,21 +79,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: "index.html", template: "./src/index.html",
-            // inject:true,
             chunks: ["bundle"]
         }),
-
-        new HtmlWebpackPlugin({
-            filename: "contact/contact.html", template: "./src/contact/contact.html",
-            // inject:true,
-            chunks: ["contact"]
-        }),
-        new HtmlWebpackPlugin({
-            filename: "sobremi/sobremi.html", template: "./src/sobremi/sobremi.html",
-            // inject:true,
-            chunks: ["sobremi"]
-        }),
-        new webpack.ProvidePlugin({$: 'jquery'}),
+        // new webpack.ProvidePlugin({$: 'jquery'}),
 
         new MiniCssExtractPlugin({filename: "assets/css/[name].css"})
 
